@@ -6,5 +6,6 @@ let stars = document.getElementById("stars");
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
-    Text.style.marginTop = value * 2.5 + 'px';
- })
+    Text.style.marginTop = value * 7.5 + 'px';
+    castle2.style.top = value * 2.5 + 'px';
+});
