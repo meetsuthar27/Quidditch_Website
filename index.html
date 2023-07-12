@@ -7,16 +7,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <div class="header">
+
+        <div class="logo">Quidditch Championship League</div>
+        <div class="menu">
+         <svg class="line-top" width="100%" height="5" viewbox="0,0 1000,20">
+          <line
+           class="line-dash"
+           x1="0"
+           y1="15"
+           x2="1000"
+           y2="15"
+           style="stroke: #d83f87; stroke-width:5px; stroke-linecap:round; stroke-dasharray: 180,1200; stroke-dashoffset: -35;"
+          />
+         </svg>
+         <ul>
+          <li class="active">Home</li>
+          <li href="matches.html">Matches</li>
+          <li href="standings.html">Standings</li>
+          <li href="tickets.html">Tickets</li>
+          <li href="index.html">News</li>
+          <li href="index.html">About</li>
+         </ul>
+         <svg class="line-bottom" width="100%" height="5" viewbox="0,0 1000,40">
+          <polygon class="lb" points="35,53 115,53 125,43 135,53 215,53" />
+          <polygon class="lb" points="285,53 365,53 375,43 385,53 465,53" />
+       
+          <polygon class="lb" points="535,53 615,53 625,43 635,53 715,53" />
+       
+          <polygon class="lb" points="785,53 865,53 875,43 885,53 965,53" />
+         </svg>
+        </div>
+       </div>
+       <script src="nav_anim.js"></script>
+    <!-- <header>
         <h2 class="logo">Quidditch Championship</h2>
     <nav class="navigation">
         <a href="index.html" class="active">Home</a>
         <a href="matches.html">Matches</a>
-        <a href="standings.html">Standings</a>X
+        <a href="standings.html">Standings</a>
         <a href="tickets.html">Tickets</a>
         <a href="news.html">News</a>
         <a href="about.html">About</a>
-    </nav>
+    </nav> -->
 </header>
 
 <section class="anim">
@@ -44,6 +77,7 @@
         <button class="button">Register Your own team now!</button>
       </div>
 </section>
-<script src=""animation.js"></script>
+<script src="animation.js"></script>
+
 </body>
 </html>
