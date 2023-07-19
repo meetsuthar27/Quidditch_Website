@@ -1,0 +1,81 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body> -->
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+          width: 7px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+          background: #255957;
+        }
+         
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #66fcf1;
+          border-radius: 7px;
+          border-width: 1.3px;
+          border-color: #45a29e;
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #dfbe4c; 
+        }
+        </style>
+<link rel="stylesheet" href="css/formstyle.css">
+<script src="css/teamreg.js"></script>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h1 id="heading">Register Your Team for Quidditch Glory!</h1>
+                <p>Magical Quidditch Seekers, Unite! <b>GSPL 2023</b> Beckons You to the Field. <br>
+                    Prepare Your Enchanted Information and Enroll Your Team in the Extraordinary Tournament!</p>
+                <form id="msform">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li href="teamreg_step1.html" id="account">Account</li>
+                        <li class="active" href="teamreg_step2.html" id="personal">Team Details</li>
+                        <li href="teamreg_step3.html" id="payment">Player Details</li>
+                        <li href="teamreg_step4.html" id="confirm">Finish</li>
+                    </ul>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> <br>
+                   
+                    <fieldset>
+                        <div class="form-card">
+
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Your Team's Magical Intel</h2>
+                                </div>
+                                <div class="col-5">
+                                </div>
+                            </div> <label class="fieldlabels">Team Name : </label>
+                            <input type="text" name="fname" placeholder="Magical Name... Be creative!" />
+                            <label class="fieldlabels">Team's 3-letter abbreviations : </label>
+                            <input type="text" name="lname" placeholder="Not more than 3 letters." />
+                            <label class="fieldlabels">Team logo : </label>
+                            <input type="file" name="teamlogo" accept="css/*">
+
+                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- </body>
+</html> -->

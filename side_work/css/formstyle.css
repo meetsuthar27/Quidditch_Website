@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: "Rubik";
+}
+    html{
+        background-color:#0b0c10;
+
+        background-image:
+        radial-gradient(at 88% 79%, #1f2833 0px, transparent 50%),
+        radial-gradient(at 13% 9%,  #45a29e 0px, transparent 50%);
+        animation: gradient 13s ease infinite;
+        background-size: 200% 200%;
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 20%;
+        }
+        25% {
+            background-position: 100% 50%;
+        }
+        50% {
+            background-position: 50% 70%;
+        }
+        100% {
+            background-position: 0% 20%;
+        }
+    }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik:wght@300;400;500;600&display=swap');
+
+
+@font-face {
+  font-family: "Harry";
+  src: url("Fonts/HARRYP__.TTF") format("truetype"),
+    url("Fonts/harryp__-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Mira";
+  src: url(Fonts/Mirador/MiraBold.otf) format("truetype");
+}
+
+p {
+    color:#c5c6c7;
+   font-family:"Rubik";
+    text-align: center;
+    font-size:1.5em;
+}
+
+#heading {
+    color:  #66fcf1; 
+    font-weight: 500;
+    font-family:"Mira";
+    text-align: center;
+    font-size:3em;
+    background : -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%,#a48c38 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, .3); */
+    margin-top: 1.3em;
+    
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background:  #1f2833;
+    border-width: 2px;
+    border-style:solid;
+    border-color: #45a29e;
+    border-radius: 0.7rem;
+    box-sizing: border-box;
+    width: 75%;
+    padding-bottom: 20px;
+    position: relative;
+    float: center;
+    margin:auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .3);
+}
+
+#msform fieldset{
+    background-color:#0b0c10;
+
+    background-image:
+    radial-gradient(at 88% 79%,#1f2833  0px, transparent 50%),
+    radial-gradient(at 13% 9%,  #1f2833  0px, transparent 50%);
+    animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 20%;
+    }
+    25% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 50% 70%;
+    }
+    100% {
+        background-position: 0% 20%;
+    }
+}
+
+.form-card {
+    text-align: left;
+    margin-left: 3em;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 2px solid #a5a5a5;
+    border-radius: 0.4rem;
+    margin-bottom: 25px;
+    margin-top: 4px;
+    margin-right: 25px;
+    width: 95%;
+    box-shadow: #45a29e;
+    box-sizing: border-box;
+    font-family:"Rubik";
+    color: #66fcf1;
+    background-color: #1f2833;
+    font-size: 16px;
+}
+
+hr {
+    /* padding: 8px 15px 8px 15px; */
+    margin-bottom: 25px;
+    margin-top: 25px;
+    /* margin-right: 25px; */
+    width: 94%;
+    object-position: center;
+
+}
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 2px solid #66fcf1;
+    outline-width: 0
+}
+
+/* Next Button */
+#msform .action-button {
+    width: 100px;
+    background: #45a29e;
+    color: #0b0c10;
+    border: 0 none;
+    font-size: 1em;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: center
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #66fcf1;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 30px;
+    color: #c5c6c7;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    font-weight: normal;
+    text-align: center;
+    font-family: "Rubik";
+}
+
+.purple-text {
+    color: #66fcf1;
+    font-weight: normal;
+    font-family: "Rubik";
+    font-weight: 100;
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left;
+}
+
+a1{
+    color:#dfbe4c;
+    font-size:1.5em;
+    font-family: "Mira";
+    margin-top: auto;
+}
+p1 {
+    color:#45a29e;
+    font-size:1em;
+    margin-bottom: 25px;
+    margin-top: 4px;
+    margin-right: 25px;
+    width: 94%;
+}
+
+
+#progressbar {
+    margin-bottom: 30px;
+    margin-top: 50px;
+    overflow: hidden;
+    color: lightgrey;
+    font-family: "Rubik";
+}
+
+#progressbar .active {
+    color: #45a29e;
+    font-family: "Rubik";
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 1.5em;
+    font-family: "Rubik";
+    width: 25%;
+    float: left;
+    position: relative;
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f13e"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #45a29e;
+}
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    background-color: #45a29e;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
