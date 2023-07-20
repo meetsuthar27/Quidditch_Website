@@ -17,27 +17,27 @@ app.set("views", template_path);
 hbs.registerPartials(partials_path);
 
 app.get('/', (req, res) => {
-    res.render("index");
+    return res.render("index");
 });
 app.get('/matches', (req, res) => {
-    res.render("matches");
+    return res.render("matches");
 });
 app.get('/teamreg_step1', (req, res) => {
 
 
-    res.render("teamreg_step1");
+    return res.render("teamreg_step1");
 });
 app.get('/teamreg_step2', (req, res) => {
-    res.render("teamreg_step2");
+    return res.render("teamreg_step2");
 });
 app.get('/teamreg_step3_1', (req, res) => {
-    res.render("teamreg_step3_1");
+    return res.render("teamreg_step3_1");
 });
 app.get('/teamreg_step3_2', (req, res) => {
-    res.render("teamreg_step3_2");
+    return res.render("teamreg_step3_2");
 });
 app.get('/teamreg_step4', (req, res) => {
-    res.render("teamreg_step4");
+    return res.render("teamreg_step4");
 });
 
 let registerTeamData = {};
@@ -51,13 +51,14 @@ app.post('/teamreg_step1', async (req, res) => {
             for (let key in req.body) {
                 registerTeamData[key] = req.body[key];
             }
+            return res.redirect('/teamreg_step2');
         }
         else {
-            res.send("Passwords do not match!");
+            return res.send("Passwords do not match!");
         }
     } catch (error) {
         console.log(error);
-        res.status(400).send(error)
+        return res.status(400).send(error)
     }
 });
 app.post('/teamreg_step2', async (req, res) => {
@@ -65,9 +66,9 @@ app.post('/teamreg_step2', async (req, res) => {
         for (let key in req.body) {
             registerTeamData[key] = req.body[key];
         }
-        res.send("Noo")
+        return res.redirect('/teamreg_step3_1');
     } catch (error) {
-        res.status(400).send(error)
+        return res.status(400).send(error)
     }
 
 });
@@ -77,42 +78,47 @@ app.post('/teamreg_step3_1', async (req, res) => {
         for (let key in req.body) {
             registerTeamData[key] = req.body[key];
         }
+        return res.redirect('/teamreg_step3_2');
     } catch (error) {
-        res.status(400).send(error)
+        return res.status(400).send(error)
     }
 });
 app.post('/teamreg_step3_2', async (req, res) => {
+
 
     try {
         for (let key in req.body) {
             registerTeamData[key] = req.body[key];
         }
+        return res.redirect('/teamreg_step4');
     } catch (error) {
-        res.status(400).send(error)
+        return res.status(400).send(error)
     }
 });
 app.post('/teamreg_step4', async (req, res) => {
     try {
+        console.log(registerTeamData)
         let registerTeam = new Register(registerTeamData)
         const registered = await registerTeam.save()
+        return res.send("Team Registered Successfully");
     } catch (error) {
-        res.status(400).send(error)
+        return res.status(400).send(error)
     }
 });
 app.get('/standings', (req, res) => {
-    res.render("standings");
+    return res.render("standings");
 });
 app.get('/index', (req, res) => {
-    res.render("index");
+    return res.render("index");
 });
 app.get('/tickets', (req, res) => {
-    res.render("tickets");
+    return res.render("tickets");
 });
 app.get('/news', (req, res) => {
-    res.render("news");
+    return res.render("news");
 });
 app.get('/about', (req, res) => {
-    res.render("about");
+    return res.render("about");
 });
 app.listen(port, () => {
     console.log('listening');
