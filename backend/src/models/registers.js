@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const RegistrationSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -64,5 +65,14 @@ const RegistrationSchema = new mongoose.Schema({
 })
 
 const Register = new mongoose.model("Register", RegistrationSchema);
+const TestSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+})
+
+console.log("s")
 
 module.exports = Register;
