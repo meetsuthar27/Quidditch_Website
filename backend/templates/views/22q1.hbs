@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualifier I</title>
+    <link rel="stylesheet" href="21sf1style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mira&display=swap">
+</head>
+
+<body>
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #255957;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #66fcf1;
+            border-radius: 7px;
+            border-width: 1.3px;
+            border-color: #45a29e;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dfbe4c;
+        }
+    </style>
+    <div class="report-container">
+        <div class="match-report">
+            <button class="close-btn" onclick="closeMatchReport()">Close</button>
+            <h1 class="match-title">GSPL 2022 - Qualifier I<br>Match Report</h1>
+            <hr color="#122425">
+
+            <div class="match-info">
+                <h2 class="venue">Venue: AR stadium, Ahmedabad</h2><br>
+                <p class="date">Date: 8th October, 2022</p>
+            </div>
+
+            <h2 class="section-heading">Scores</h2>
+            <div class="scores">
+                <p class="team"><img src="css/Assets/2022/SSM.png" alt="">SEAS Smashers : 180</p>
+                <p class="team"><img src="css/Assets/2022/SRZ.png" alt="">SAS Rizzsters : 135</p>
+            </div>
+
+            <h2 class="section-heading">Top Scorer</h2>
+            <p class="top-scorer">Robert Oppenheimer - 105 points</p>
+
+            <h2 class="section-heading">Top 3 Players Individual Scores</h2>
+            <table class="player-scores">
+                <tr>
+                    <th>Player Name</th>
+                    <th>Points</th>
+                    <th>Snitches</th>
+                </tr>
+                <tr>
+                    <td>Robert Oppenheimer</td>
+                    <td>105</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Heisenberg</td>
+                    <td>50</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Neils Bohr</td>
+                    <td>30</td>
+                    <td>0</td>
+                </tr>
+                <!-- Add more player data here -->
+            </table>
+        </div>
+    </div>
+    <script>
+        function closeMatchReport() {
+            // Check if the page is loaded inside an iframe
+            if (window !== window.parent) {
+                // If inside an iframe, navigate back in the parent window
+                window.parent.history.back();
+            } else {
+                // If not inside an iframe, navigate back in the current window
+                window.history.back();
+            }
+        }
+    </script>
+</body>
+
+</html>

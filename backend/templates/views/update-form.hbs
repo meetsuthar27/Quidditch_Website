@@ -1,0 +1,39 @@
+<!-- update-form.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Team Data</title>
+    <style>
+        /* Add your custom CSS styling here if needed */
+    </style>
+</head>
+
+<body>
+    <h2>Update Team Data</h2>
+    <form action="/update/{{team._id}}" method="POST">
+        <label for="matches">Matches:</label>
+        <input type="number" name="matches" value="{{team.matches}}" required>
+        <br>
+        <label for="win">Win:</label>
+        <input type="number" name="win" value="{{team.win}}" required>
+        <br>
+        <label for="loss">Loss:</label>
+        <input type="number" name="loss" value="{{team.loss}}" required>
+        <br>
+        <label for="draw">Draw:</label>
+        <input type="number" name="draw" value="{{team.draw}}" required>
+        <br>
+        <label for="points">Points:</label>
+        <input type="number" name="points" value="{{team.points}}" required>
+        <br>
+        <label for="gd">GD:</label>
+        <input type="number" name="gd" value="{{team.gd}}" required>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+
+</html>

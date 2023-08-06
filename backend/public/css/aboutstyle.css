@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik:wght@300;400;500;600&display=swap');
+
+
+@font-face {
+    font-family: "Harry";
+    src: url("Fonts/HARRYP__.TTF") format("truetype"),
+        url("Fonts/harryp__-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Mira";
+    src: url(css/Fonts/Mirador/MiraBold.otf) format("truetype");
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #0b0c10;
+    background-image:
+        radial-gradient(at 88% 79%, #122425 0px, transparent 50%),
+        radial-gradient(at 13% 9%, #45a29e 0px, transparent 50%);
+    animation: gradient 10s ease infinite;
+    background-size: 170% 170%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 20%;
+    }
+
+    25% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 50% 70%;
+    }
+
+    100% {
+        background-position: 0% 20%;
+    }
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky {
+    background: yellowgreen;
+}
+
+.logo {
+    font-size: 2.2em;
+    font-family: "Mira";
+    background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: "ani";
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #dfbe4c;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 1em;
+    font-family: "Mira";
+}
+
+/* Media query for tablet screens */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
+
+    .navigation a {
+        margin: 5px;
+    }
+}
+
+/* smaller screen */
+@media (max-width: 500px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation a {
+        margin: 10px 0;
+    }
+
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #dfbe4c;
+    background: linear-gradient(90deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    color: #0b0c10;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    --color-primary-1: #122425;
+    --color-primary-2: #dfbe4c;
+    --color-neutral-1: hsl(36, 100%, 99%);
+    --color-neutral-2: hsl(233, 8%, 79%);
+    --color-neutral-3: #c5c6c7;
+    --color-neutral-4: #45a29e;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+a:active,
+a:visited {
+    text-decoration: none;
+}
+
+h1 {
+    color: #dfbe4c;
+    font-family: "Mira";
+    /* font-size:210%; */
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    font-family: 'Rubik', sans-serif;
+    padding-top: 9rem;
+    /* padding-bottom: 12rem; */
+}
+
+/* .container {
+  width: min(100% - 2rem, 120rem);
+  margin-inline: auto;
+} */
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutus-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.aboutus-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: #dfbe4c;
+}
+
+.aboutus-content h1 {
+    font-size: 5.6rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.aboutus-content p {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.photo img {
+    width: 35vw;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid #45a29e;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #45a29e;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5s
+}
+
+.social-media a:hover {
+    background-color: #122425;
+    color: #dfbe4c;
+    box-shadow: 0 0 1rem #dfbe4c;
+    border: .2rem solid #dfbe4c;
+
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: #c5c6c7;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #a48c38;
+    font-size: 1.6rem;
+    color: blue;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+.about-us-k {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: #c5c6c7;
+}
+
+.photo-k img {
+    width: 35vw;
+}
+
+.aboutus-content-k h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.aboutus-content-k h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: #dfbe4c;
+}
+
+.aboutus-content-k h1 {
+    font-size: 5.6rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.aboutus-content-k p {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 700;
+}

@@ -4,15 +4,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Golden Snitch Pro League</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #255957;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #66fcf1;
+            border-radius: 7px;
+            border-width: 1.3px;
+            border-color: #45a29e;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dfbe4c;
+        }
+    </style>
 </head>
 
 <body>
-    {{>navbar}}
+    <!-- {{>navbar}} -->
+
+    <header>
+        <h2 class="logo">Golden Snitch Pro League</h2>
+        <nav class="navigation">
+            <a href="index">Home</a>
+            <a href="clashes">Clashes</a>
+            <a href="standings">Standings</a>
+            <a href="tickets" class="active">Tickets</a>
+            <a href="news">News</a>
+            <a href="about">About</a>
+        </nav>
+    </header>
+    <link rel="stylesheet" href="css/ticketsstyle.css">
 
 
+    <section class="venue" id="venue">
+        <h1 class="heading">Magical Venues of GSPL 2023</h1>
 
+        <div class="venue-container">
+            <div class="venue-box" onmouseover="playMusic(this)" onmouseout="stopMusic(this)">
+                <img src="css/Venue/v-ahmedabad.jpeg">
+                <div class="venue-layer">
+                    <h4>AR Stadium</h4>
+                    <p>Ahmedabad, Gujarat</p>
+                </div>
+            </div>
+
+            <div class="venue-box" onmouseover="playMusic(this)" onmouseout="stopMusic(this)">
+                <img src="css/Venue/v-himachal.jpeg">
+                <div class="venue-layer">
+                    <h4>Himalayan Heights Stadium</h4>
+                    <p>Rudraprayag, Himachal Pradesh</p>
+                </div>
+            </div>
+
+            <div class="venue-box" onmouseover="playMusic(this)" onmouseout="stopMusic(this)">
+                <img src="css/Venue/v-dharmshala.jpg">
+                <div class="venue-layer">
+                    <h4>Dharmshala Ground</h4>
+                    <p>Dharmshala, Himachal Pradesh</p>
+                </div>
+            </div>
+
+            <div class="venue-box" onmouseover="playMusic(this)" onmouseout="stopMusic(this)">
+                <img src="css/Venue/v-delhi.jpg">
+                <div class="venue-layer">
+                    <h4>Dazzling Stadium</h4>
+                    <p>Delhi, India</p>
+                </div>
+            </div>
+
+            <div class="venue-box" onmouseover="playMusic(this)" onmouseout="stopMusic(this)">
+                <img src="css/Venue/v-mumbai.jpg">
+                <div class="venue-layer">
+                    <h4>Magical Stadium</h4>
+                    <p>Mumbai, Maharashtra</p>
+                </div>
+            </div>
+
+            <div class="venue-box" onmouseover="playMusic(this)" onmouseout="stopMusic(this)">
+                <img src="css/Venue/v-jaipur.jpg">
+                <div class="venue-layer">
+                    <h4>PaaniPaani Stadium</h4>
+                    <p>Jaipur, Rajasthan</p>
+                </div>
+            </div>
+
+            <audio id="music" src="css/music/trimmed.mp3" loop></audio>
+
+            <script>
+                // Function to play music when hovering over a venue box
+                function playMusic(venueBox) {
+                    const music = document.getElementById("music");
+                    music.play();
+                }
+
+                // Function to stop music when not hovering over a venue box
+                function stopMusic(venueBox) {
+                    const music = document.getElementById("music");
+                    music.pause();
+                    music.currentTime = 0; // Reset the music to the beginning
+                }
+            </script>
+
+        </div>
+    </section>
+
+    <section class="ticket-booking" id="ticket-booking">
+        <div class="container">
+            <h1 class="heading" data-aos="fade-up" data-aos-easing="ease-in-out">GSPL Ticket Booking</h1>
+            <form action="submit.php" method="post" class="ticket-form" data-aos="fade-up" data-aos-duration="500"
+                data-aos-easing="ease-in-out">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="match">Select Match:</label>
+                    <select id="match" name="match" required>
+                        <option value="">Choose a Match</option>
+                        <option value="Gryffindor Developers vs. Cyber Mahatmas">Gryffindor Developers vs. Cyber
+                            Mahatmas</option>
+                        <option value="Rampage Cyber Crusaders vs. Techstars Titans">Rampage Cyber Crusaders vs.
+                            Techstars Titans</option>
+                        <!-- Add more match options here -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ticket-type">Select Ticket Type:</label>
+                    <select id="ticket-type" name="ticket-type" required>
+                        <option value="">Choose a Ticket Type</option>
+                        <option value="Regular">Regular</option>
+                        <option value="VIP">VIP</option>
+                        <!-- Add more ticket type options here -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="region">Select Seat Region:</label>
+                    <select id="region" name="region" required>
+                        <option value="">Choose any of these region</option>
+                        <option value="Golden Arc (center)">Golden Arc (center-front)</option>
+                        <option value="Golden Arc (center)">Silver Arc (center-back)</option>
+                        <option value="Golden Arc (center)">Golden Left</option>
+                        <option value="Golden Arc (center)">Golden Right</option>
+                        <option value="Golden Arc (center)">Silver Left</option>
+                        <option value="Golden Arc (center)">Silver Right</option>
+
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Book Tickets</button>
+                </div>
+            </form>
+
+            <div class="end-text">
+                <h1>Double the Magic, Double the Fun:<br>See You at the Golden Snitch Pro League!</h1>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+
+        AOS.init();
+    </script>
+
+    <footer data-aos="fade-up" data-aos-easing="ease-in-out">
+        <div class="footer-content">
+            <h3>Golden Snitch Pro League</h3>
+            <p>Enter GSPL, where Quidditch magic thrives! Soar on broomsticks, witness captivating matches, and embrace
+                the enchantment. Your wizarding journey starts here – join for Quidditch greatness!</p>
+
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; <a href="#">GSPL - by Meet Suthar & kalash Shah</a> </p>
+            <div class="footer-menu">
+                <ul class="f-menu">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="tickets">Tickets</a></li>
+                    <li><a href="about">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
 </body>
 
 </html>

@@ -32,6 +32,7 @@
 </style>
 <link rel="stylesheet" href="css/formstyle.css">
 <script src="css/teamreg.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -43,10 +44,10 @@
                 <form id="msform" action="/teamreg_step4" method="POST">
                     <!-- progressbar -->
                     <ul id="progressbar">
-                        <li class="active" href="teamreg_step1.html" id="account">Account</li>
+                        <li href="teamreg_step1.html" id="account">Account</li>
                         <li href="teamreg_step2.html" id="personal">Team Details</li>
                         <li href="teamreg_step3.html" id="payment">Player Details</li>
-                        <li href="teamreg_step4.html" id="confirm">Finish</li>
+                        <li class="active" href="teamreg_step4.html" id="confirm">Finish</li>
                     </ul>
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
@@ -73,3 +74,43 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("msform").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            fetch("/teamreg_step4", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({})
+            })
+                .then(response => {
+                    if (response.ok) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: 'Team registered successfully!',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(() => {
+                            // Redirect to the index page after the success message
+                            window.location.href = "/index";
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Team registration failed!',
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    });
+</script>

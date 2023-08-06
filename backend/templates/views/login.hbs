@@ -1,57 +1,209 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quidditch Championship</title>
-  <link rel="stylesheet" href="public/style.css" />
-</head>
 
-<body>
-  <!-- {{>navbar}} -->
-  <header>
-    <h2 class="logo">Quidditch Championship</h2>
-    <nav class="navigation">
-      <a href="index" class="active">Home</a>
-      <a href="matches">Matches</a>
-      <a href="standings">Standings</a>
-      <a href="tickets">Tickets</a>
-      <a href="news">News</a>
-      <a href="about">About</a>
-    </nav>
-  </header>
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
 
-  <section class="anim">
-    <img src="css/Assets/castles.png" id="castle2" />
-    <img src="css/Assets/stars.png" id="stars" />
-    <img src="css/Assets/castle.png" id="castle1" />
-    <img src="css/Assets/rings.png" id="rings" />
-    <h class="Text">Welcome to the magical<br />world of Quidditch sport!</h>
-  </section>
+<body class="text-center">
+  <style>
+    .wrapper {
+      position: relative;
+      width: 400px;
+      height: 440px;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, .5);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4rem;
+      z-index: 10;
+      overflow: hidden;
+      /* transform: scale(0); */
+    }
 
-  <section class="sec2"></section>
+    .wrapper .form-box {
+      width: 100%;
+      padding: 40px;
+    }
 
-  <section class="sec">
-    <h2>Scrolling</h2>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
-      quis fugiat molestias! Reiciendis provident saepe odit doloribus sit
-      sunt tenetur rem expedita deserunt qui ipsa quae corrupti molestias,
-      doloremque sequi laborum fuga id ex nam a tempora neque quis explicabo
-      sint? Est distinctio eos provident. Vel maxime aut repudiandae
-      architecto ullam ipsa itaque doloribus, dicta illo cum earum labore
-      doloremque.
-    </p>
-  </section>
+    .wrapper .icon-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45px;
+      height: 45px;
+      background: #162938;
+      font-size: 2em;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom-left-radius: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
 
-  <section class="signup">
-    <div class="wrap">
-      <button class="button">Register Your own team now!</button>
+    .form-box h2 {
+      font-size: 2em;
+      color: #122425;
+      text-align: center;
+    }
+
+    .input-box {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      border-bottom: 2px solid #0b0c10;
+      margin: 30px 0;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+      color: #0b0c10;
+      font-weight: 500;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+    .input-box input:focus~label,
+    .input-box input:valid~label {
+      top: -5px;
+    }
+
+
+    .input-box input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      color: #122425;
+      font-weight: 500;
+      padding: 0 35px 0 5px;
+    }
+
+    .remember-forgot {
+      font-size: .9em;
+      color: #334c99;
+      font-weight: 500;
+      margin: -15px 0 15px;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+    }
+
+    .remember-forgot label input {
+      accent-color: #122425;
+      margin-right: 3px;
+    }
+
+    .remember-forgot a {
+      color: #0b0c10;
+      font-family: "rubik";
+    }
+
+    .remember-forgot a:hover {
+      color: #122425;
+    }
+
+    .form-sec .btn {
+      width: 100%;
+      height: 45px;
+      background: -webkit-linear-gradient(0deg, #122425 0%, #367e7a 50%, #122425 100%);
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #0b0c10;
+      font-weight: 500;
+      transition: .5s;
+      margin-top: 15px;
+    }
+
+    .form-sec .btn:hover {
+      background-color: #367e7a;
+      background: -webkit-linear-gradient(0deg, #367e7a 0%, #367e7a 50%, #367e7a 100%);
+      border: 1.5px solid #0b0c10;
+    }
+
+    .login-register {
+      font-size: .9em;
+      font-weight: 500;
+      font-family: "rubik";
+      text-align: center;
+      margin: 25px 9 10px;
+      margin-top: 25px;
+    }
+
+    .login-register p a {
+      font-family: "rubik";
+      color: #122425;
+    }
+
+    .login-register p a:hover {
+      font-family: "rubik";
+      color: #0b0c10;
+      text-decoration: underline;
+    }
+
+    .input-box .icon {
+      position: absolute;
+      right: 8px;
+      font-size: 1.2em;
+      color: #0b0c10;
+      line-height: 57px;
+    }
+
+    .lounge__details h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #45a29e;
+    }
+
+    .lounge__details p {
+      color: #c5c6c7;
+    }
+  </style>
+  <section class="form-sec">
+    <div class="wrapper">
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form action="/index" method="POST">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="email" name="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" name="password" required>
+            <label>Password</label>
+          </div>
+          {{!--
+          <div class="remember-forgot">
+            <label> <input type="checkbox"> Remember me</label>
+            <a href="">Forgot Password?</a>
+          </div> --}}
+          <button class="btn" type="submit">Login</button>
+          <div class="login-register">
+            <p>Want to add your own team?<a href="teamreg_step1" class="register-link"> Click
+                Here</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
-  <script src="../../public/css/animation.js"></script>
+
+
+
 </body>
 
 </html>

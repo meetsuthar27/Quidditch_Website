@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik:wght@300;400;500;600&display=swap');
+
+
+@font-face {
+    font-family: "Harry";
+    src: url("Fonts/HARRYP__.TTF") format("truetype"),
+        url("Fonts/harryp__-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Mira";
+    src: url(Fonts/Mirador/MiraBold.otf) format("truetype");
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #0b0c10;
+    background-image:
+        radial-gradient(at 88% 79%, #122425 0px, transparent 50%),
+        radial-gradient(at 13% 9%, #45a29e 0px, transparent 50%);
+    animation: gradient 10s ease infinite;
+    background-size: 170% 170%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 20%;
+    }
+
+    25% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 50% 70%;
+    }
+
+    100% {
+        background-position: 0% 20%;
+    }
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.2em;
+    background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: "ani";
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #dfbe4c;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+/* Media query for tablet screens */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
+
+    .navigation a {
+        margin: 5px;
+    }
+}
+
+/* smaller screen */
+@media (max-width: 500px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation a {
+        margin: 10px 0;
+    }
+
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #dfbe4c;
+    background: linear-gradient(90deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    color: #0b0c10;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    --color-primary-1: #122425;
+    --color-primary-2: #dfbe4c;
+    --color-neutral-1: hsl(36, 100%, 99%);
+    --color-neutral-2: hsl(233, 8%, 79%);
+    --color-neutral-3: #c5c6c7;
+    --color-neutral-4: #45a29e;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+a:active,
+a:visited {
+    text-decoration: none;
+}
+
+h1 {
+    color: #dfbe4c;
+    font-family: "Mira";
+    /* font-size:210%; */
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    font-family: 'Rubik', sans-serif;
+    padding-top: 9rem;
+    /* padding-bottom: 12rem; */
+}
+
+.tabs {
+    position: relative;
+    width: 100%;
+}
+
+.tabs .title {
+    padding: 50px 20px 100px;
+    font-family: "Harry";
+    text-align: center;
+    font-size: 9rem;
+    letter-spacing: -0.2REM;
+    line-height: 8rem;
+}
+
+.tabs .tab-header,
+.tabs .tab-indicator,
+.tabs .tab-body {
+    margin: 0, auto;
+    /* max-width:650px; */
+    width: 100%;
+}
+
+#season .years {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    /* margin-top:-60px; */
+    z-index: 2;
+}
+
+#season .years>button {
+    width: 33%;
+    text-align: center;
+    font-family: "Mira";
+    padding: 15px 0px;
+    color: #dfbe4c;
+    font-size: 2.4em;
+    cursor: pointer;
+}
+
+/* #season .years > button.active{
+  background-color: #3e8f8b;
+  padding:15px 0px; */
+/* bacheight:60px; */
+
+
+
+
+/* Styling for the clickable buttons */
+#season .years>button {
+    font-family: 'Mira', sans-serif;
+    font-size: 2.6rem;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: transparent;
+    /* border: solid 2px #66fcf1; */
+    color: #3e8f8b;
+    transition: background-color 0.3s ease;
+}
+
+#season .years>button.active {
+    /* background-color: #122425; */
+    color: #122425;
+    background: #dfbe4c;
+    background: linear-gradient(90deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+
+    /* text-shadow: #0b0c105e; */
+}
+
+/* Hover effect */
+#season .years>button:hover {
+    background-color: #3e8f8b;
+    color: #122425;
+}
+
+/* Focus effect */
+#season .years>button:focus {
+    outline: none;
+}
+
+.container {
+    width: min(100% - 2rem, 120rem);
+    margin-inline: auto;
+}
+
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.season {
+    min-height: 10vh;
+    padding: 10rem 9% 2rem;
+    height: 10vh;
+}
+
+.season-container {
+    position: relative;
+    border-radius: 2rem;
+    border: #66fcf1 2px solid;
+    box-shadow: 0 0 1rem #0b0c10;
+    overflow: hidden;
+    display: flex;
+}
+
+.season h1 {
+    font-size: 4.3rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.teams {
+    /* background: linear-gradient(90deg, #183031 0%,#0b0c10 50%, #183031 100%); */
+    position: relative;
+}
+
+.teams h1 {
+    font-size: 4.3rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.teams-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 4rem;
+}
+
+.teams-container .teams-box {
+    position: relative;
+    border-radius: 1.5rem;
+    border: #45a29e 2px solid;
+    box-shadow: 0 0 1rem #0b0c10;
+    overflow: hidden;
+    display: flex;
+}
+
+.teams-box img {
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.teams-box:hover img {
+    transform: scale(1.1);
+}
+
+.teams-box .teams-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#45a29e, rgba(0, 0, 0, 0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(-100%);
+    transition: .5s ease;
+}
+
+.teams-box:hover .teams-layer {
+    transform: translateY(0);
+}
+
+.teams-layer h4 {
+    font-size: 3rem;
+    font-family: "Mira";
+    color: #122425;
+}
+
+.teams-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}

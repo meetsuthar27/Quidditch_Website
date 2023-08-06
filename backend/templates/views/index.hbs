@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Snitch Pro League</title>
-
     <link rel="stylesheet" href="css/style.css">
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
         /* width */
@@ -38,187 +37,404 @@
 <body>
     <!-- {{>navbar}} -->
 
-    <header>
-        <h2 class="logo">Golden Snitch Pro League</h2>
-        <nav class="navigation">
-            <a href="index.html" class="active">Home</a>
-            <a href="clashes.html">Clashes</a>
-            <a href="standings.html">Standings</a>
-            <a href="tickets.html">Tickets</a>
-            <a href="news">News</a>
-            <a href="about.html">About</a>
-        </nav>
+    <header id="header">
+        <h2 href="#" class="logo">Golden Snitch Pro League</h2>
+        <div class="toggle"><box-icon name='menu' animation='fade-right' color='#dfbe4c'></box-icon></div>
+        <div class="navigation">
+            <li><a href="index" class="active">Home</a></li>
+            <li><a href="clashes">Clashes</a></li>
+            <li><a href="standings">Standings</a></li>
+            <li><a href="tickets">Tickets</a></li>
+            <li><a href="news">News</a></li>
+            <li><a href="about">About</a></li>
+        </div>
     </header>
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/indexstyle.css">
 
-    <!-- --------------------------------------------------------------------------------- -->
-
-
-    <section class="anim">
-        <img src="css/Assets/Homepage - PNGs/castles.png" id="castle2">
-        <img src="css/Assets/Homepage - PNGs/stars" id="stars">
+    <heade class="section__container header__container">
+        <!-- <h1 class="section__header">Find And Book<br/>A Great Experience</h1> -->
+        <section class="img-and-3d"><img src="css/assets/Homepage - PNGs/stad.png" alt="header" />
+            <section class="three-d">
+                <!-- <img src="css/Assets/Homepage - PNGs/castles.png" id="castle2">
+        <img src="css/Assets/Homepage - PNGs/stars.png" id="stars">
         <img src="css/Assets/Homepage - PNGs/castle.png" id="castle1">
         <img src="css/Assets/Homepage - PNGs/rings.png" id="rings">
-        <h class="Text">Welcome to the magical<br>world of Quidditch sport!</h>
+        <h class="Text">Welcome to the magical<br>world of Quidditch sport!</h> -->
 
-    </section>
+                <script type="module"
+                    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
 
-    <section class="sec">
-        <h2>Welcome to the Golden Snitch Pro League - GSPL!</h2>
-        <p>Step into the enchanting world of Quidditch with GSPL, the premier professional Quidditch championship for
-            magical students. Join teams from across the wizarding realm as they compete in thrilling matches, soaring
-            on broomsticks to seize the elusive <b>Golden Snitch</b>. Experience the magic, camaraderie, and wizarding
-            wonder of GSPL!
-        </p>
+                <!-- Use it like any other HTML element -->
+                <model-viewer id="color" src="css/Assets/3d/goldensnitchgltf.gltf" alt="3dsnitch" auto-rotate
+                    shadow-softness="0.4" shadowIntensity=1 shadow-radius="4" shadow-color="#122425" camera-controls ar
+                    ios-src="css/Assets/3d/goldensnitchgltf.gltf"></model-viewer>
 
-    </section>
+                <script>
+                    const modelViewerColor = document.querySelector("model-viewer#color");
+                    const colorString = "#dfbe4c"; // Set the color string to red (#ff0000)
+                    const metalnessValue = 1; // Adjust the metalness value between 0 and 1 (1 for full metalness)
+                    const lightIntensity = 0.5;
+                    const roughnessValue = 0.3;
+                    const lightPosition = [1, 1, 1];
 
-    <section class="sec2">
-        <h2>What is the golden snitch?</h2>
-        <p>
-            In the captivating realm of Quidditch, the Golden Snitch is a small, golden, winged ball that flits
-            tirelessly across the pitch during matches. The ultimate prize, capturing the Snitch awards the seeker's
-            team an impressive 150 points and brings the game to an exhilarating end. The seeker's skill and speed are
-            put to the test as they seek this elusive treasure in the sky. Will you be the one to seize the Golden
-            Snitch and lead your team to triumph in GSPL?</p>
-        <div class="snitch">
-            <img src="css/Assets/Homepage - PNGs/snitch.png" alt="The Golden Snitch" class="image">
-            <div class="overlay">
-                <div class="t">Get Ready to <br>Conquer this Snitch!</div>
-            </div>
-    </section>
 
-    <section class="sec3">
-        <h2>How to Play?</h2>
-        <p>
-        <section class="signup">
-            <div class="wrap">
-                <button class="button" onclick="window.location.href='teamreg_step1';">Register Your Team for
-                    Quidditch Glory!</button>
-            </div>
+
+                    modelViewerColor.addEventListener('load', () => {
+                        const [material] = modelViewerColor.model.materials;
+                        material.pbrMetallicRoughness.setBaseColorFactor(colorString);
+                        material.pbrMetallicRoughness.setMetallicFactor(metalnessValue);
+                        material.pbrMetallicRoughness.setRoughnessFactor(roughnessValue);
+                        modelViewerColor.shadowIntensity = lightIntensity;
+
+
+                        const orbitCycle = [
+                            '45deg 55deg 4m',
+                            '-60deg 110deg 2m',
+                            modelViewerColor.cameraOrbit
+                        ];
+
+                        setInterval(() => {
+                            const currentOrbitIndex = orbitCycle.indexOf(modelViewerColor.cameraOrbit);
+                            modelViewerColor.cameraOrbit =
+                                orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+                        }, 3000);
+
+                    });
+                </script>
+
+            </section>
         </section>
+    </heade>
+    <div id="greeting-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h3>Hey {{userName}}!</h3>
+            <p>Welcome to Golden Snitch Pro League. Enjoy the matches!</p>
+        </div>
+    </div>
+    <script>
+        // Add JavaScript code to handle the pop-up behavior
+        function closePopup() {
+            document.getElementById("greeting-popup").style.display = "none";
+        }
 
-        <div class="col-xxl-12 wru">
-            <h1 class="what-r-u-text py-5 w-100 wrul-align">What Are You Looking For?</h1>
-            <div class="what-r-u-btns">
-                <div>
-                    <a onclick="click_cta(this)" data-event_context="What are you looking for?"
-                        data-element_text="Fixtures &amp; Results" href="https://www.iplt20.com/matches/results"><i></i>
-                        Fixtures &amp; Results</a>
-                    <span></span>
+        // Display the pop-up when the page loads
+        window.onload = function () {
+            const userName = "{{userName}}";
+            if (userName) {
+                document.getElementById("greeting-popup").style.display = "block";
+            }
+        };
+    </script>
+    <!-- <section class="section__container booking__container">
+      <div class="booking__nav">
+        <span>Economy Class</span>
+        <span>Business Class</span>
+        <span>First Class</span>
+      </div>
+      <form>
+        <div class="form__group">
+          <span><i class="ri-map-pin-line"></i></span>
+          <div class="input__content">
+            <div class="input__group">
+              <input type="text" />
+              <label>Location</label>
+            </div>
+            <p>Where are you goung?</p>
+          </div>
+        </div>
+        <div class="form__group">
+          <span><i class="ri-user-3-line"></i></span>
+          <div class="input__content">
+            <div class="input__group">
+              <input type="number" />
+              <label>Travellers</label>
+            </div>
+            <p>Add guests</p>
+          </div>
+        </div>
+        <div class="form__group">
+          <span><i class="ri-calendar-line"></i></span>
+          <div class="input__content">
+            <div class="input__group">
+              <input type="text" />
+              <label>Departure</label>
+            </div>
+            <p>Add date</p>
+          </div>
+        </div>
+        <div class="form__group">
+          <span><i class="ri-calendar-line"></i></span>
+          <div class="input__content">
+            <div class="input__group">
+              <input type="text" />
+              <label>Return</label>
+            </div>
+            <p>Add date</p>
+          </div>
+        </div>
+        <button class="btn"><i class="ri-search-line"></i></button>
+      </form>
+    </section> -->
+
+    <section class="section__container plan__container">
+        <p class="subheader">STAY CONNECTED</p>
+        <h2 class="section__header">GSPL Wandervaganza!</h2>
+        <p class="description">
+            Prepare your wands and broomsticks for the enchanting journey to GSPL – the magical extravaganza that
+            captures hearts and minds alike! Discover the bewitching travel requirements for your epic adventure to
+            witness the finest broomstick talents in action!
+        </p>
+        <div class="plan__grid">
+            <div class="plan__content">
+                <span class="number">01</span>
+                <h4>Quidditch Wizardry in GSPL</h4>
+                <p>
+                    Be a Quidditch globetrotter without fear of Triwizard mishaps! At GSPL's Travel Support, we've got
+                    your magical travel covered! Get ready to soar on your broomsticks to the enchanting GSPL - where
+                    wizards and witches unite for a wild ride of snitches, spells, and splendid sportsmanship! No
+                    portkeys needed, just a dash of Floo Powder and a sprinkle of pixie dust!
+                </p>
+                <span class="number">02</span>
+                <h4>Magical Multi-risk Spell at GSPL</h4>
+                <p>
+                    Weave a shield of protection around your Quidditch dreams with our comprehensive multi-risk travel
+                    insurance. Guard against rogue Bludgers, mischievous Nifflers, and even occasional rogue spells –
+                    all while enjoying the thrill of GSPL!
+                </p>
+                <span class="number">03</span>
+                <h4>Destination: Quidditch Excellence</h4>
+                <p>
+                    Unveil the secrets of each wizarding realm with GSPL's travel requirements tailored to your chosen
+                    destinations. From Hogwarts-like arenas to mystical Quidditch pitches, embark on a whimsical journey
+                    like no other in the wizarding world!
+                </p>
+            </div>
+            <div class="plan__image">
+                <img src="css/assets/Homepage - PNGs/trophy1.jpg" alt="plan" />
+                <img src="css/assets/Homepage - PNGs/ground1.jpg" alt="plan" />
+                <img src="css/assets/Homepage - PNGs/harry1.jpg" alt="plan" />
+            </div>
+        </div>
+    </section>
+
+    <section class="memories">
+        <div class="section__container memories__container">
+            <div class="memories__header">
+                <h2 class="section__header">
+                    Ready to Apparate into the GSPL magic?
+                </h2>
+                <a href="login" class="view__all">Login Now</a>
+            </div>
+
+            <section class="form-sec">
+                <div class="wrapper">
+                    <span class="icon-close">
+                        <ion-icon name="close"></ion-icon>
+                    </span>
+                    <div class="form-box login">
+                        <h2>Login</h2>
+                        <form action="/index" method="POST">
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                                <input type="email" name="email" required>
+                                <label>Email</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                                <input type="password" name="password" required>
+                                <label>Password</label>
+                            </div>
+                            {{!--
+                            <div class="remember-forgot">
+                                <label> <input type="checkbox"> Remember me</label>
+                                <a href="">Forgot Password?</a>
+                            </div> --}}
+                            <button class="btn" type="submit">Login</button>
+                            <div class="login-register">
+                                <p>Want to add your own team?<a href="teamreg_step1" class="register-link"> Click
+                                        Here</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <a onclick="click_cta(this)" data-event_context="What are you looking for?"
-                        data-element_text="Points Table" href="https://www.iplt20.com/points-table/2023"><i></i> Points
-                        Table</a>
-                    <span></span>
+            </section>
+
+            <div class="memories__grid">
+                <div class="memories__card">
+                    <span><i class="ri-calendar-2-line"></i></span>
+                    <h4>Access to Magical Tournaments</h4>
+                    <p>
+                        Upon logging in to GSPL, you unlock the portal to enter thrilling Quidditch tournaments held in
+                        the wizarding world. Immerse yourself in the heart-pounding action as teams battle for Quidditch
+                        supremacy and the glory of the Golden Snitch.
+                    </p>
                 </div>
-                <div>
-                    <a onclick="click_cta(this)" data-event_context="What are you looking for?"
-                        data-element_text="Overall Stats" href="https://www.iplt20.com/stats/2023"><i></i> Overall
-                        Stats</a>
-                    <span></span>
+                <div class="memories__card">
+                    <span><i class="ri-shield-check-line"></i></span>
+                    <h4>Personalized Profile and Team Selection</h4>
+                    <p>
+                        Create your unique wizarding profile and select your favorite GSPL team. Show your team
+                        allegiance with pride and connect with other passionate fans, forging bonds across the magical
+                        community.
+                    </p>
                 </div>
-                <div>
-                    <a onclick="click_cta(this)" data-event_context="What are you looking for?"
-                        data-element_text="All Teams" href="https://www.iplt20.com/teams"><i></i> All Teams</a>
-                    <span></span>
+                <div class="memories__card">
+                    <span><i class="ri-bookmark-2-line"></i></span>
+                    <h4>Magical Rewards and Surprises</h4>
+                    <p>
+                        As a registered GSPL member, you gain access to exclusive rewards, enchanting surprises, and
+                        delightful bonuses. Earn magical points, uncover hidden quests, and celebrate the magic of
+                        Quidditch like never before!
+                    </p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <script src="../../public/css/animation.js"></script>
-</body>
-
-<footer class="footer">
-    <div class="footer__addr">
-        <h1 class="footer__logo">Something</h1>
-
-        <h2>Contact</h2>
-
-        <address>
-            5534 Somewhere In. The World 22193-10212<br>
-
-            <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-        </address>
-    </div>
-
-    <ul class="footer__nav">
-        <li class="nav__item">
-            <h2 class="nav__title">Media</h2>
-
-            <ul class="nav__ul">
-                <li>
-                    <a href="#">Online</a>
-                </li>
-
-                <li>
-                    <a href="#">Print</a>
-                </li>
-
-                <li>
-                    <a href="#">Alternative Ads</a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="nav__item nav__item--extra">
-            <h2 class="nav__title">Technology</h2>
-
-            <ul class="nav__ul nav__ul--extra">
-                <li>
-                    <a href="#">Hardware Design</a>
-                </li>
-
-                <li>
-                    <a href="#">Software Design</a>
-                </li>
-
-                <li>
-                    <a href="#">Digital Signage</a>
-                </li>
-
-                <li>
-                    <a href="#">Automation</a>
-                </li>
-
-                <li>
-                    <a href="#">Artificial Intelligence</a>
-                </li>
-
-                <li>
-                    <a href="#">IoT</a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="nav__item">
-            <h2 class="nav__title">Legal</h2>
-
-            <ul class="nav__ul">
-                <li>
-                    <a href="#">Privacy Policy</a>
-                </li>
-
-                <li>
-                    <a href="#">Terms of Use</a>
-                </li>
-
-                <li>
-                    <a href="#">Sitemap</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-
-    <div class="legal">
-        <p>&copy; 2019 Something. All rights reserved.</p>
-
-        <div class="legal__links">
-            <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+    <section class="section__container lounge__container">
+        <div class="lounge__image">
+            <img src="css/assets/Homepage - PNGs/ground2.jpg" alt="lounge" />
+            <img src="css/assets/Homepage - PNGs/play1.jpg" alt="lounge" />
         </div>
-    </div>
-</footer>
+        <div class="lounge__content">
+            <h2 class="section__header">Quidditch Enthusiast Retreat</h2>
+            <div class="lounge__grid">
+                <div class="lounge__details">
+                    <h4>Embrace Magical Serenity</h4>
+                    <p>
+                        Sorcery Oasis invites you to a realm of tranquility, where enchanted seating, serene ambiance,
+                        and attentive charm await your indulgence.
+                    </p>
+                </div>
+                <div class="lounge__details">
+                    <h4>Elevate Your Quidditch Experience</h4>
+                    <p>
+                        Crafted for devoted wizards and witches, this exclusive sanctuary grants premium amenities,
+                        support, and private spaces for mastering your magical skills.
+                    </p>
+                </div>
+                <div class="lounge__details">
+                    <h4>A Warm Wizarding Welcome</h4>
+                    <p>
+                        The Family Hearth, a haven for fans of all ages, kindles a sense of belonging for parents and
+                        young sorcerers alike.
+                    </p>
+                </div>
+                <div class="lounge__details">
+                    <h4>A Feast of Enchantments</h4>
+                    <p>
+                        Immerse yourself in a wizarding culinary journey, savoring international delights, gourmet
+                        spells, and carefully concocted potions to enchant your taste buds.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__container travellers__container">
+        <h2 class="section__header">Best players of the GSPL 2022</h2>
+        <div class="travellers__grid">
+            <div class="travellers__card">
+                <img src="css/assets/2022/GSC.jpg" alt="traveller" />
+                <div class="travellers__card__content">
+                    <img src="css/assets/Homepage - PNGs/person1.jpg" alt="client" />
+                    <h4>Harry Potter</h4>
+                    <p>GICT Super coders</p>
+                </div>
+            </div>
+            <div class="travellers__card">
+                <img src="css/assets/2022/ASW.jpg" alt="traveller" />
+                <div class="travellers__card__content">
+                    <img src="css/assets/Homepage - PNGs/person2.jpg" alt="client" />
+                    <h4>Cho Chang</h4>
+                    <p>Ahmedabad Superwizards</p>
+                </div>
+            </div>
+            <div class="travellers__card">
+                <img src="css/assets/2022/RAR.jpg" alt="traveller" />
+                <div class="travellers__card__content">
+                    <img src="css/assets/Homepage - PNGs/person3.jpg" alt="client" />
+                    <h4>Ginny Weasley</h4>
+                    <p>Rajkot Royals</p>
+                </div>
+            </div>
+            <div class="travellers__card">
+                <img src="css/assets/2022/SSM.jpg" alt="traveller" />
+                <div class="travellers__card__content">
+                    <img src="css/assets/Homepage - PNGs/person4.jpg" alt="client" />
+                    <h4>Fred Weasley</h4>
+                    <p>SEAS Smashers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Flivan</h3>
+          <p>
+            Where Excellence Takes Flight. With a strong commitment to customer
+            satisfaction and a passion for air travel, Flivan Airlines offers
+            exceptional service and seamless journeys.
+          </p>
+          <p>
+            From friendly smiles to state-of-the-art aircraft, we connect the
+            world, ensuring safe, comfortable, and unforgettable experiences.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>INFORMATION</h4>
+          <p>Home</p>
+          <p>About</p>
+          <p>Offers</p>
+          <p>Seats</p>
+          <p>Destinations</p>
+        </div>
+        <div class="footer__col">
+          <h4>CONTACT</h4>
+          <p>Support</p>
+          <p>Media</p>
+          <p>Socials</p>
+        </div>
+      </div>
+      <div class="section__container footer__bar">
+        <p>Copyright © 2023 Web Design Mastery. All rights reserved.</p>
+        <div class="socials">
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+          <span><i class="ri-instagram-line"></i></span>
+          <span><i class="ri-youtube-fill"></i></span>
+        </div>
+      </div>
+    </footer> -->
+
+    <footer>
+        <div class="footer-content">
+            <h3>Golden Snitch Pro League</h3>
+            <p>Enter GSPL, where Quidditch magic thrives! Soar on broomsticks, witness captivating matches, and embrace
+                the enchantment. Your wizarding journey starts here – join for Quidditch greatness!</p>
+
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; <a href="#">GSPL - by Meet Suthar & kalash Shah</a> </p>
+            <div class="footer-menu">
+                <ul class="f-menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Tickets</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
 
 </html>

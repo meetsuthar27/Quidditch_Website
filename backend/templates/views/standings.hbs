@@ -4,14 +4,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Golden Snitch Pro League</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #255957;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #66fcf1;
+            border-radius: 7px;
+            border-width: 1.3px;
+            border-color: #45a29e;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dfbe4c;
+        }
+    </style>
 </head>
 
 <body>
-    {{>navbar}}
+
+    <header id="header">
+        <h2 href="#" class="logo">Golden Snitch Pro League</h2>
+        <div class="toggle"><box-icon name='menu' animation='fade-right' color='#dfbe4c'></box-icon></div>
+        <div class="navigation">
+            <li><a href="index">Home</a></li>
+            <li><a href="clashes">Clashes</a></li>
+            <li><a href="standings" class="active">Standings</a></li>
+            <li><a href="tickets">Tickets</a></li>
+            <li><a href="news">News</a></li>
+            <li><a href="about">About</a></li>
+        </div>
+    </header>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/standingstyle.css">
+
+    <script>
+        const toggleMenu = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation');
+
+        toggleMenu.onclick = function () {
+            toggleMenu.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+    </script>
+
+    <main>
+
+        <section class="text">
+            <h1>Ascending to Glory: GSPL Standings Unveiled</h1>
+            <p>The Spellbinding Competition - Who Soars High and Who Seeks Greatness?</p>
+        </section>
+
+        <section class="table-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Team</th>
+                        <th>Matches</th>
+                        <th>Win</th>
+                        <th>Loss</th>
+                        <th>Draw</th>
+                        <th>Points</th>
+                        <th>GD</th>
+                    </tr>
+                </thead>
+                {{#if isAdmin}}
+                <tbody>
+                    {{#each standingsData}}
+                    <tr>
+                        <td>{{increment @index}}</td>
+                        <td>{{this.team}}</td>
+                        <td>{{this.matches}}</td>
+                        <td>{{this.win}}</td>
+                        <td>{{this.loss}}</td>
+                        <td>{{this.draw}}</td>
+                        <td>{{this.points}}</td>
+                        <td>{{this.gd}}</td>
+                        <td>
+                            <a href="/update/{{this._id}}">Update</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{else}}
+                <tbody>
+                    {{#each standingsData}}
+                    <tr>
+                        <td>{{increment @index}}</td>
+                        <td>{{this.team}}</td>
+                        <td>{{this.matches}}</td>
+                        <td>{{this.win}}</td>
+                        <td>{{this.loss}}</td>
+                        <td>{{this.draw}}</td>
+                        <td>{{this.points}}</td>
+                        <td>{{this.gd}}</td>
+
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{/if}}
+            </table>
+        </section>
+        <section class="table">
+            <section class="table-header">
+                <h1>GSPL 2022</h1>
+            </section>
+            <section class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team</th>
+                            <th>Matches</th>
+                            <th>Win</th>
+                            <th>Loss</th>
+                            <th>Draw</th>
+                            <th>Points</th>
+                            <th>GD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2022/SSM.png" alt="">
+                                <tdh>SEAS Smashers</tdh>
+                            </td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>23</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td><img src="css/Assets/2022/GSC.png" alt="">
+                                <tdh>GICT Super Coders</tdh>
+                            </td>
+
+                            <td>7</td>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>19</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td><img src="css/Assets/2022/GSS.png" alt="">
+                                <tdh>Ganges Sanatanis</tdh>
+                            </td>
+
+                            <td>7</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>16</td>
+                            <td>24</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td><img src="css/Assets/2022/ASW.png" alt="">
+                                <tdh>Ahmedabad Superwizards</tdh>
+                            </td>
+
+                            <td>7</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>15</td>
+                            <td>14</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td><img src="css/Assets/2022/SRZ.png" alt="">
+                                <tdh>SAS Rizzsters</tdh>
+                            </td>
+
+                            <td>7</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>12</td>
+                            <td>25</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td><img src="css/Assets/2022/RAR.png" alt="">
+                                <tdh>Rajkot Royals</tdh>
+                            </td>
+
+                            <td>7</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>0</td>
+                            <td>9</td>
+                            <td>12</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td><img src="css/Assets/2022/TXW.png" alt="">
+                                <tdh>Texas Warriors</tdh>
+                            </td>
+                            <td>7</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>6</td>
+                            <td>-2</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2021/AIN.png" alt="">
+                                <tdh>Ahmedabad Invincibles</tdh>
+                            </td>
+
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>45</td>
+                            <td>20</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <section class="table">
+            <section class="table-header">
+                <h1>GSPL 2021</h1>
+            </section>
+            <section class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team</th>
+                            <th>Matches</th>
+                            <th>Win</th>
+                            <th>Loss</th>
+                            <th>Draw</th>
+                            <th>Points</th>
+                            <th>GD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2021/AIN.png" alt="">
+                                <tdh> Ahmedabad Invincibles</tdh>
+                            </td>
+
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>45</td>
+                            <td>20</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2021/AIN.png" alt="">
+                                <tdh> Ahmedabad </tdh>
+                            </td>
+
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td><strong>18</strong></td>
+                            <td>45</td>
+                            <td>20</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2021/AIN.png" alt="">
+                                <tdh> Ahmedabad Invincibles</tdh>
+                            </td>
+
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>45</td>
+                            <td>20</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2021/AIN.png" alt="">
+                                <tdh> Ahmedabad Invincibles</tdh>
+                            </td>
+
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>45</td>
+                            <td>20</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2021/AIN.png" alt="">
+                                <tdh> Ahmedabad Invincibles</tdh>
+                            </td>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>45</td>
+                            <td>20</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td><img src="css/Assets/2021/AIN.png" alt="">
+                                <tdh> Ahmedabad Invincibles</tdh>
+                            </td>
+
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>18</td>
+                            <td>45</td>
+                            <td>20</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
 
 
+    </main>
 
 </body>
 

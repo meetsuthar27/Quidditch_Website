@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSPL 2022</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #255957;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #66fcf1;
+            border-radius: 7px;
+            border-width: 1.3px;
+            border-color: #45a29e;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dfbe4c;
+        }
+    </style>
+
+    <audio id="music" src="css/Assets/music/cl22.mp3" loop></audio>
+    <script>
+        const music = document.getElementById("music");
+        let isMusicPlaying = false;
+
+        function playMusicWithFade() {
+            if (!isMusicPlaying) {
+                music.volume = 0;
+                music.play();
+                fadeInMusic();
+                isMusicPlaying = true;
+            }
+        }
+
+        function fadeInMusic() {
+            const fadeInterval = setInterval(function () {
+                if (music.volume < 1) {
+                    music.volume += 0.05;
+                } else {
+                    clearInterval(fadeInterval);
+                }
+            }, 200);
+        }
+
+        function stopMusicWithFade() {
+            if (isMusicPlaying) {
+                fadeOutMusic();
+                isMusicPlaying = false;
+            }
+        }
+
+        function fadeOutMusic() {
+            const fadeInterval = setInterval(function () {
+                if (music.volume > 0) {
+                    music.volume -= 0.05;
+                } else {
+                    music.pause();
+                    clearInterval(fadeInterval);
+                }
+            }, 200);
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- {{>navbar}} -->
+    <script>
+        // Play music when the page loads
+        window.addEventListener("load", playMusicWithFade);
+
+        // Stop music with fade effect when leaving the page
+        window.addEventListener("beforeunload", stopMusicWithFade);
+    </script>
+
+    <header>
+        <h2 class="logo">Golden Snitch Pro League</h2>
+        <nav class="navigation">
+            <a href="index">Home</a>
+            <a href="clashes" class="active">Clashes</a>
+            <a href="standings">Standings</a>
+            <a href="tickets">Tickets</a>
+            <a href="news">News</a>
+            <a href="about">About</a>
+        </nav>
+    </header>
+    <link rel="stylesheet" href="css/clashesstyle.css">
+
+
+    <section class="season" id="season">
+        <div class="years">
+            <button onclick="redirectToPage('clashes21')">2021</button>
+            <button onclick="redirectToPage('clashes22')" class="active">2022</button>
+            <button onclick="redirectToPage('clashes')">2023</button>
+
+        </div>
+
+        <script>function redirectToPage(url) {
+                window.location.href = url;
+            }
+        </script>
+
+        <hr color="#45a29e">
+
+
+    </section>
+
+    <section class="teams" id="teams">
+        <h1 class="heading">Teams of GSPL 2022</h1>
+
+        <div class="teams-container">
+            <div class="teams-box">
+                <img src="css/Assets/2022/GSC.jpg">
+                <div class="teams-layer">
+                    <h4>GICT Super Coders</h4>
+                    <p>GSC</p>
+                </div>
+            </div>
+
+            <div class="teams-box">
+                <img src="css/Assets/2022/SSM.jpg">
+                <div class="teams-layer">
+                    <h4>SEAS Smashers</h4>
+                    <p>SSM</p>
+                </div>
+            </div>
+
+            <div class="teams-box">
+                <img src="css/Assets/2022/SRZ.jpg">
+                <div class="teams-layer">
+                    <h4>SAS Rizzsters</h4>
+                    <p>SRZ</p>
+                </div>
+            </div>
+
+            <div class="teams-box">
+                <img src="css/Assets/2022/ASW.jpg">
+                <div class="teams-layer">
+                    <h4>Ahmedabad Superwizrards</h4>
+                    <p>ASW</p>
+                </div>
+            </div>
+
+            <div class="teams-box">
+                <img src="css/Assets/2022/GSS.jpg">
+                <div class="teams-layer">
+                    <h4>Ganges Sanatanis</h4>
+                    <p>GSS</p>
+                </div>
+            </div>
+
+            <div class="teams-box">
+                <img src="css/Assets/2022/RAR.jpg">
+                <div class="teams-layer">
+                    <h4>Rajkot Royals</h4>
+                    <p>RAR</p>
+                </div>
+            </div>
+
+            <div class="teams-box">
+                <img src="css/Assets/2022/TXW.jpg">
+                <div class="teams-layer">
+                    <h4>Texas Warriors</h4>
+                    <p>TXW</p>
+                </div>
+            </div>
+
+            <div class="teams-box">
+                <img src="css/Assets/2022/TCC.jpg">
+                <div class="teams-layer">
+                    <h4>Tech Charged Coders</h4>
+                    <p>TCC</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clashes" aria-labelledby="clashes-label" id="clash">
+        <div class="container">
+
+            <h2 class="h2 section-title" data-aos="fade-up" data-aos-easing="ease-in-out">Playoff Matches of GSPL 2022
+            </h2>
+
+            <!-- <p class="section-subtitle" id="clashes-label" data-reveal="bottom">
+                        Clashes : Unleashing Magical Rivalries
+                    </p> -->
+
+            <ol class="clash-list">
+
+                <li class="clash-item" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                    <div class="clashes-card left has-before" data-reveal="left">
+
+                        <img src="css/Assets/2022/SRZ.png" alt="SAS Rizzsters" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">SAS Rizzsters</h3>
+
+                        <div class="card-meta-goal">135</div>
+                    </div>
+
+                    <div class="clashes-time" data-reveal="bottom">
+                        <div class="card-meta"><a href="22q1" class="match-report-link">Qualifier I</a></div>
+
+                        <time class="time" datetime="10:00">9:00</time>
+                        <time class="date" datetime="2021-08-05">8th October, 2022</time>
+                    </div>
+
+                    <div class="clashes-card right has-before" data-reveal="right">
+
+                        <img src="css/Assets/2022/SSM.png" alt="SEAS Smashers" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">SEAS Smashers</h3>
+                        <div class="card-meta-goal-win">180</div>
+
+                    </div>
+                </li>
+
+                <li class="clash-item" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                    <div class="clashes-card left has-before" data-reveal="left">
+
+                        <img src="css/Assets/2022/GSS.png" alt="Ganges Sanatanis" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">Ganges Sanatanis</h3>
+
+                        <div class="card-meta-goal">140</div>
+                    </div>
+
+                    <div class="clashes-time" data-reveal="bottom">
+                        <div class="card-meta"><a href="22e" class="match-report-link">Eliminator</a></div>
+
+                        <time class="time" datetime="10:00">9:00</time>
+                        <time class="date" datetime="2021-08-05">9th October, 2022</time>
+                    </div>
+
+                    <div class="clashes-card right has-before" data-reveal="right">
+
+                        <img src="css/Assets/2022/GSC.png" alt="GICT Super Coders" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">GICT Super Coders</h3>
+                        <div class="card-meta-goal-win">155</div>
+
+                    </div>
+                </li>
+
+                <li class="clash-item" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                    <div class="clashes-card left has-before" data-reveal="left">
+
+                        <img src="css/Assets/2022/GSC.png" alt="GICT Super Coders" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">GICT Super Coders</h3>
+
+                        <div class="card-meta-goal-win">150</div>
+                    </div>
+
+                    <div class="clashes-time" data-reveal="bottom">
+                        <div class="card-meta"><a href="22q2" class="match-report-link">Qualifier II</a></div>
+
+                        <time class="time" datetime="10:00">9:00</time>
+                        <time class="date" datetime="2021-08-05">11th October, 2022</time>
+
+
+                    </div>
+
+                    <div class="clashes-card right has-before" data-reveal="right">
+
+                        <img src="css/Assets/2022/SRZ.png" alt="SAS Rizzsters" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">SAS Rizzsters</h3>
+
+                        <div class="card-meta-goal">80</div>
+                    </div>
+                </li>
+
+                <li class="clash-item" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                    <div class="clashes-card left has-before" data-reveal="left">
+
+                        <img src="css/Assets/2022/GSC.png" alt="GICT Super Coders" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">GICT Super Coders</h3>
+
+                        <div class="card-meta-goal-win">195</div>
+                    </div>
+
+                    <div class="clashes-time" data-reveal="bottom">
+                        <div class="card-meta"><a href="22f" class="match-report-link">Grand Finale</a></div>
+
+                        <time class="time" datetime="10:00">10:00</time>
+                        <time class="date" datetime="2021-08-05">13th October, 2022</time>
+
+
+                    </div>
+
+                    <div class="clashes-card right has-before" data-reveal="right">
+
+                        <img src="css/Assets/2022/SSM.png" alt="SEAS Smashers" WIDTH="86" class="card-banner">
+
+                        <h3 class="h3 card-title">SEAS Smashers</h3>
+
+                        <div class="card-meta-goal">110</div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+
+        AOS.init();
+    </script>
+
+    <footer data-aos="fade-up" data-aos-easing="ease-in-out">
+        <div class="footer-content">
+            <h3>Golden Snitch Pro League</h3>
+            <p>Enter GSPL, where Quidditch magic thrives! Soar on broomsticks, witness captivating matches, and embrace
+                the enchantment. Your wizarding journey starts here – join for Quidditch greatness!</p>
+
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; <a href="#">GSPL - by Meet Suthar & kalash Shah</a> </p>
+            <div class="footer-menu">
+                <ul class="f-menu">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="tickets">Tickets</a></li>
+                    <li><a href="about">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

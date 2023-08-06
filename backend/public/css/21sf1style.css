@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik:wght@300;400;500;600&display=swap');
+
+@font-face {
+    font-family: "Harry";
+    src: url("Fonts/HARRYP__.TTF") format("truetype"),
+        url("Fonts/harryp__-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Mira";
+    src: url(Fonts/Mirador/MiraBold.otf) format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #0b0c10;
+    background-image:
+        radial-gradient(at 88% 79%, #122425 0px, transparent 50%),
+        radial-gradient(at 13% 9%, #45a29e 0px, transparent 50%);
+    animation: gradient 10s ease infinite;
+    background-size: 170% 170%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 20%;
+    }
+
+    25% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 50% 70%;
+    }
+
+    100% {
+        background-position: 0% 20%;
+    }
+}
+
+.report-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.match-report {
+    max-width: 95%;
+    margin: 20px auto;
+    width: 45rem;
+    background-color: #45a29e;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #122425;
+    border-radius: 10px;
+}
+
+
+.match-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+hr {
+    margin: 1.8rem;
+    position: relative;
+}
+
+.match-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.match-info h2 {
+    font-size: 22px;
+}
+
+.match-info p {
+    font-size: 18px;
+}
+
+.section-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    margin-right: .5rem;
+    vertical-align: middle;
+}
+
+.section-heading {
+    background: linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    color: #122425;
+    font-family: "Rubik", sans-serif;
+    padding: 8px 16px;
+    border: solid 1.7px #122425;
+    border-radius: 4px;
+}
+
+.team {
+    font-family: "Mira";
+}
+
+.team {
+    /* font-weight: bold; */
+    font-family: "Mira";
+    white-space: pre;
+    /* Preserve white spaces (new lines) */
+}
+
+.top-scorer {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.player-scores {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.player-scores th,
+.player-scores td {
+    border: 2px solid #234547;
+    padding: 8px;
+}
+
+.player-scores th {
+    font-weight: bold;
+    background: linear-gradient(90deg, #2a6260 0%, #45a29e 50%, #2a6260 100%);
+    color: #0b0c10;
+    text-align: left;
+}
+
+.close-btn {
+    background: linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+    color: #122425;
+    font-family: "Rubik", sans-serif;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+}
+
+.close-btn:hover {
+    background: #b51212;
+    color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 600px) {
+    .match-title {
+        font-size: 24px;
+    }
+
+    .match-info h2,
+    .match-info p {
+        font-size: 18px;
+    }
+
+    .section-heading {
+        font-size: 20px;
+    }
+
+    .scores {
+        flex-direction: column;
+    }
+
+    .team {
+        margin-bottom: 10px;
+    }
+
+    .top-scorer {
+        font-size: 16px;
+    }
+
+    .player-scores th,
+    .player-scores td {
+        padding: 6px;
+    }
+
+    .close-btn {
+        font-size: 14px;
+    }
+}

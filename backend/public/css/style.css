@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Mira";
-  src: url(Fonts/Mirador/MiraBold.otf) format("truetype");
+  src: url('Fonts/Mirador/MiraBold.otf') format("truetype");
 }
 
 * {
@@ -20,6 +20,7 @@
 }
 
 body {
+  cursor: url('css/Assets/cur.png'), auto;
   background-color: #0b0c10;
 
   background-image:
@@ -57,6 +58,7 @@ a {
   font-family: "Mira";
 }
 
+/* 
 header {
   position: absolute;
   top: 0;
@@ -96,12 +98,128 @@ header {
   background: #dfbe4c;
   background: linear-gradient(90deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
   color: #0b0c10;
-}
+} */
 
 
 /* ------------------------------------------------------------------------ */
 
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
 
+#header .logo {
+  font-size: 2.2em;
+  background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: "ani";
+}
+
+#header .navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#header .navigation li {
+  list-style: none;
+  margin-left: 10px;
+}
+
+#header .navigation li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #dfbe4c;
+  border-radius: 20px;
+}
+
+#header .navigation li a:hover,
+#header .navigation li a.active {
+  background: #0b0c10;
+  background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+  color: #122425;
+}
+
+#header .navigation li a.active {
+  background: #0b0c10;
+  background: -webkit-linear-gradient(45deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
+  color: #122425;
+}
+
+@media (max-width:1276px) {
+  #header .navigation li a {
+    font-size: 1.3em;
+    margin: 4px 0;
+    display: inline-block;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width:992px) {
+  #header {
+    padding: 20px;
+  }
+
+  #header .logo {
+    font-size: 1.5em;
+  }
+
+  #header .navigation {
+    display: none;
+  }
+
+  #header .navigation.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: #122425;
+  }
+
+  #header .navigation li {
+    margin-left: 0;
+  }
+
+  #header .navigation li a {
+    font-size: 1.5em;
+    margin: 5px 0;
+    display: inline-block;
+    border-radius: 30px;
+  }
+
+  .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: url(css/Assets/icons/Menu\ hamburger\ sticks.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000;
+  }
+
+  .toggle.active {
+    background: url(css/Assets/icons/Menu\ close\ broom.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
 
 .anim {
   position: relative;
@@ -293,85 +411,3 @@ h {
   align-items: center;
   justify-content: center;
 }
-
-.button {
-  min-width: 630px;
-  min-height: 60px;
-  font-family: 'Rubik', sans-serif;
-  font-size: 26px;
-  letter-spacing: 1.3px;
-  font-weight: 700;
-  color: #0b0c10;
-  background: #a48c38;
-  background: linear-gradient(90deg, #dfbe4c 0%, #f9e499 50%, #a48c38 100%);
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px #dfbe4c 64%;
-  transition: all 0.3s ease-in-out 0s;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  padding: 10px;
-}
-
-button::before {
-  content: '';
-  border-radius: 1000px;
-  min-width: calc(630px + 12px);
-  min-height: calc(60px + 12px);
-  border: 6px solid #dfbe4c;
-  box-shadow: 0 0 60px #dfbe4c 64%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all .3s ease-in-out 0s;
-}
-
-.button:hover,
-.button:focus {
-  color: #0b0c10;
-  transform: translateY(-6px);
-}
-
-button:hover::before,
-button:focus::before {
-  opacity: 1;
-}
-
-button::after {
-  content: '';
-  width: 650px;
-  height: 30px;
-  border-radius: 100%;
-  border: 6px solid #dfbe4c;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
-}
-
-button:hover::after,
-button:focus::after {
-  animation: none;
-  display: none;
-}
-
-@keyframes ring {
-  0% {
-    width: 30px;
-    height: 30px;
-    opacity: 1;
-  }
-
-  100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-  }
-}
-
-/* Team Reg Fornm*/

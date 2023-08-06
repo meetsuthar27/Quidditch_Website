@@ -2,15 +2,420 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Golden Snitch Pro League</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #255957;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #66fcf1;
+            border-radius: 7px;
+            border-width: 1.3px;
+            border-color: #45a29e;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dfbe4c;
+        }
+    </style>
 </head>
 
 <body>
-    {{>navbar}}
+    <header id="header">
+        <h2 href="#" class="logo">Golden Snitch Pro League</h2>
+        <div class="toggle"><box-icon name='menu' animation='fade-right' color='#dfbe4c'></box-icon></div>
+        <div class="navigation">
+            <li><a href="index" >Home</a></li>
+            <li><a href="clashes">Clashes</a></li>
+            <li><a href="standings">Standings</a></li>
+            <li><a href="tickets">Tickets</a></li>
+            <li><a href="news" class="active">News</a></li>
+            <li><a href="about">About</a></li>
+        </div>
+    </header>
 
+    <link rel="stylesheet" href="css/newsstyle.css">
+    <!-- --------------------------------------------------------------------------------- -->
+
+
+    <main>
+
+        <section class="panel">
+            <section class="news">
+                <div class="container">
+                    <div class="news__inner">
+                        <article class="news__main">
+
+                            <div class="news__main-content">
+
+                                <h1 class="news__main-title">GSPL 23 Team Registration Now Open!</h1>
+
+                                <div class="news__main-info">
+                                    <p class="news__main-subtitle">
+
+                                        Unleash your team's wizarding prowess as GSPL 23 invites aspiring witches and
+                                        wizards to embark on a thrilling Quidditch journey. Register now to compete in
+                                        the enchanting realm of soaring broomsticks and captivating matches, vying for
+                                        the ultimate Quidditch supremacy. Don't miss your chance to make history in the
+                                        Golden Snitch Pro League! </p>
+                                    <a href="newsar1" class="read-more">Read more </a>
+                                    <img src="News - Images/image1.webp" alt="Quidditch"
+                                        class="news__main-cover news__main-cover--desktop" />
+                                </div>
+                            </div>
+                        </article>
+                        <aside class="news__side">
+                            <h2 class="news__side-title">New</h2>
+                            <ul class="news__side-list">
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href="#">Hydrogen VS Electric Cars</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        Will hydrogen-fueled cars ever catch up to EVs?
+                                    </p>
+                                </li>
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href="">The Downsides of AI Artistry</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        What are the possible adverse effects of on-demand AI image generation?
+                                    </p>
+                                </li>
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href=""> Is VC Funding Drying Up?</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        Private funding by VC firms is down 50% YOY. We take a look at what that means.
+                                    </p>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <section class="recent">
+                <div class="container">
+                    <div class="recent__inner">
+                        <ul class="recent__list">
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-retro-pcs.jpg" alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">01</span>
+                                        <h4 class="recent__article-title">
+                                            <a href="#"> Reviving Retro PCs
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">What happens when old PCs are given modern
+                                            upgrades?
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-top-laptops.jpg" alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">02</span>
+                                        <h4 class="recent__article-title">
+                                            <a href=""> Top 10 Laptops of 2022
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">Our best picks for various needs and
+                                            budgets.
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-gaming-growth.jpg"
+                                        alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">03</span>
+                                        <h4 class="recent__article-title">
+                                            <a href="#"> The Growth of Gaming
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">How the pandemic has sparked fresh
+                                            opportunities.
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <hr color="#dfbe4">
+        <section class="panel">
+            <section class="news">
+                <div class="container">
+                    <div class="news__inner">
+                        <article class="news__main">
+
+                            <div class="news__main-content">
+
+                                <h1 class="news__main-title">A Look Back at Historic GSPL '22 Moments</h1>
+
+                                <div class="news__main-info">
+                                    <p class="news__main-subtitle">
+
+                                        In a magical journey through time, "The Golden Snitch Chronicles" takes GSPL
+                                        fans on a nostalgic tour of GSPL 2022's historic moments. From heart-stopping
+                                        Snitch catches to spellbinding team triumphs, this enchanting retrospective
+                                        celebrates the wizarding feats that have shaped the legacy of Quidditch
+                                        greatness. Relive the magic and be captivated once more!
+                                    </p>
+                                    <a href="newsar1" class="read-more">Read more </a>
+                                    <img src="css/Assets/website20.jpg" alt="Web3 future"
+                                        class="news__main-cover news__main-cover--desktop" />
+                                </div>
+                            </div>
+                        </article>
+                        <aside class="news__side">
+                            <h2 class="news__side-title">New</h2>
+                            <ul class="news__side-list">
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href="#">Hydrogen VS Electric Cars</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        Will hydrogen-fueled cars ever catch up to EVs?
+                                    </p>
+                                </li>
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href="">The Downsides of AI Artistry</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        What are the possible adverse effects of on-demand AI image generation?
+                                    </p>
+                                </li>
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href=""> Is VC Funding Drying Up?</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        Private funding by VC firms is down 50% YOY. We take a look at what that means.
+                                    </p>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <section class="recent">
+                <div class="container">
+                    <div class="recent__inner">
+                        <ul class="recent__list">
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-retro-pcs.jpg" alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">01</span>
+                                        <h4 class="recent__article-title">
+                                            <a href="#"> Reviving Retro PCs
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">What happens when old PCs are given modern
+                                            upgrades?
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-top-laptops.jpg" alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">02</span>
+                                        <h4 class="recent__article-title">
+                                            <a href=""> Top 10 Laptops of 2022
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">Our best picks for various needs and
+                                            budgets.
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-gaming-growth.jpg"
+                                        alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">03</span>
+                                        <h4 class="recent__article-title">
+                                            <a href="#"> The Growth of Gaming
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">How the pandemic has sparked fresh
+                                            opportunities.
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <hr color="#dfbe4">
+
+        <section class="panel">
+            <section class="news">
+                <div class="container">
+                    <div class="news__inner">
+                        <article class="news__main">
+
+                            <div class="news__main-content">
+
+                                <h1 class="news__main-title">Meet the GSPL's Fastest Snitch Chasers!</h1>
+
+                                <div class="news__main-info">
+                                    <p class="news__main-subtitle">
+
+                                        GSPL 2022 unveils its fleet-footed stars in "Meet the GSPL's Fastest Snitch
+                                        Chasers!" From lightning-quick sprints to daring dives, witness these
+                                        mesmerizing Seekers soar to extraordinary heights. With skill and finesse, these
+                                        magical athletes embody the essence of Quidditch, captivating fans and leaving a
+                                        trail of awe in their wake.
+                                    </p>
+                                    <a href="#" class="read-more">Read more </a>
+                                    <img src="css/Assets/website20.jpg" alt="Web3 future"
+                                        class="news__main-cover news__main-cover--desktop" />
+                                </div>
+                            </div>
+                        </article>
+                        <aside class="news__side">
+                            <h2 class="news__side-title">New</h2>
+                            <ul class="news__side-list">
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href="#">Hydrogen VS Electric Cars</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        Will hydrogen-fueled cars ever catch up to EVs?
+                                    </p>
+                                </li>
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href="">The Downsides of AI Artistry</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        What are the possible adverse effects of on-demand AI image generation?
+                                    </p>
+                                </li>
+                                <li class="news__side-item">
+                                    <h3 class="news__side-item__title">
+                                        <a href=""> Is VC Funding Drying Up?</a>
+                                    </h3>
+                                    <p class="news__side-item__description">
+                                        Private funding by VC firms is down 50% YOY. We take a look at what that means.
+                                    </p>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <section class="recent">
+                <div class="container">
+                    <div class="recent__inner">
+                        <ul class="recent__list">
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-retro-pcs.jpg" alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">01</span>
+                                        <h4 class="recent__article-title">
+                                            <a href="#"> Reviving Retro PCs
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">What happens when old PCs are given modern
+                                            upgrades?
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-top-laptops.jpg" alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">02</span>
+                                        <h4 class="recent__article-title">
+                                            <a href=""> Top 10 Laptops of 2022
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">Our best picks for various needs and
+                                            budgets.
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="recent__item">
+                                <article class="recent__article">
+                                    <img class="recent__article-cover" src="assets/images/image-gaming-growth.jpg"
+                                        alt="">
+                                    <div class="recent__article-info">
+                                        <span class="recent__article-number">03</span>
+                                        <h4 class="recent__article-title">
+                                            <a href="#"> The Growth of Gaming
+                                            </a>
+                                        </h4>
+                                        <p class="recent__article-subtitle">How the pandemic has sparked fresh
+                                            opportunities.
+                                        </p>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
 
 </body>
+
+<footer>
+    <div class="footer-content">
+        <h3>Golden Snitch Pro League</h3>
+        <p>Enter GSPL, where Quidditch magic thrives! Soar on broomsticks, witness captivating matches, and embrace the
+            enchantment. Your wizarding journey starts here – join for Quidditch greatness!</p>
+
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy; <a href="#">GSPL - by Meet Suthar & kalash Shah</a> </p>
+        <div class="footer-menu">
+            <ul class="f-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Tickets</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+</footer>
+
 </html>

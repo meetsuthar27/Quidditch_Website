@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-
-mongoose.connect("mongodb://localhost:27017", {
+const mongoose = require("mongoose");
+const DB = "mongodb+srv://kalash:Kalash2911@cluster0.hjbixyw.mongodb.net/Registration?retryWrites=true&w=majority";
+mongoose.connect(DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 }).then(() => {
-    console.log("connection successful");
-}).catch((err) => {
-    console.log("no connection");
-});
+    console.log("connection established!");
+}).catch((err) => console.log(err));
