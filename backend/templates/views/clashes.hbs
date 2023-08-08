@@ -197,7 +197,13 @@
             <!-- <p class="section-subtitle" id="clashes-label" data-reveal="bottom">
                         Clashes : Unleashing Magical Rivalries
                     </p> -->
-
+            {{#if isAdmin}}
+            <li class="clash-item" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                <div class="clashes-card">
+                    <h3 class="h3 card-title"><a href="/add-team">Add Team</a></h3>
+                </div>
+            </li>
+            {{/if}}
             <ul class="clash-list">
                 {{#each clashesData}}
                 <li class="clash-item" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
@@ -211,7 +217,8 @@
                     </div>
 
                     <div class="clashes-time" data-reveal="bottom">
-                        <div class="card-meta"><a href="#" class="match-report-link">Match 1</a></div>
+                        <div class="card-meta"><a href="#" class="match-report-link">Match {{increment @index}}</a>
+                        </div>
 
                         <time class="time" datetime="{{Date}}">{{time}}</time>
                         <time class="date" datetime="{{Date}}">{{Date}}</time>

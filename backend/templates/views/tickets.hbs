@@ -128,7 +128,7 @@
     <section class="ticket-booking" id="ticket-booking">
         <div class="container">
             <h1 class="heading" data-aos="fade-up" data-aos-easing="ease-in-out">GSPL Ticket Booking</h1>
-            <form action="submit.php" method="post" class="ticket-form" data-aos="fade-up" data-aos-duration="500"
+            <form action="/tickets" method="post" class="ticket-form" data-aos="fade-up" data-aos-duration="500"
                 data-aos-easing="ease-in-out">
                 <div class="form-group">
                     <label for="fullname">Full Name:</label>
@@ -149,17 +149,15 @@
                     <label for="match">Select Match:</label>
                     <select id="match" name="match" required>
                         <option value="">Choose a Match</option>
-                        <option value="Gryffindor Developers vs. Cyber Mahatmas">Gryffindor Developers vs. Cyber
-                            Mahatmas</option>
-                        <option value="Rampage Cyber Crusaders vs. Techstars Titans">Rampage Cyber Crusaders vs.
-                            Techstars Titans</option>
-                        <!-- Add more match options here -->
+                        {{#each clashes}}
+                        <option value="{{this.team1}} vs {{this.team2}}">{{this.team1}} vs {{this.team2}}</option>
+                        {{/each}}
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="ticket-type">Select Ticket Type:</label>
-                    <select id="ticket-type" name="ticket-type" required>
+                    <select id="ticket-type" name="ticketType" required>
                         <option value="">Choose a Ticket Type</option>
                         <option value="Regular">Regular</option>
                         <option value="VIP">VIP</option>
@@ -169,7 +167,7 @@
 
                 <div class="form-group">
                     <label for="region">Select Seat Region:</label>
-                    <select id="region" name="region" required>
+                    <select id="region" name="seatRegion" required>
                         <option value="">Choose any of these region</option>
                         <option value="Golden Arc (center)">Golden Arc (center-front)</option>
                         <option value="Golden Arc (center)">Silver Arc (center-back)</option>

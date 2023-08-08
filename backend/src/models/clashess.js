@@ -12,8 +12,8 @@ const clashesSchema = new mongoose.Schema({
         required: true
     },
     Date: {
-        type: String,
-        default: 0
+        type: Date,
+        default: Date.now
     },
     g1: {
         type: Number,

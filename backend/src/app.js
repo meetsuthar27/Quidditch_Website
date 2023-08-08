@@ -16,7 +16,7 @@ const mongoose = require("mongoose");
 const auth = require("./middleware/auth");
 const Standing = require("./models/standingss");
 const Clash = require("./models/clashess");
-
+const Booking = require('./models/ticketss'); // Import the Booking model
 
 require("./hbs-helpers");
 app.use(express.json());
@@ -205,6 +205,69 @@ app.get('/standings', (req, res) => {
 //             console.error(err);
 //         });
 // });
+
+// Route for rendering the "Add Team" form
+app.get('/add-team', async (req, res) => {
+    const teams = await Register.find({}, 'firstname');
+    res.render('add-team', { teams });
+});
+
+// Route for handling the "Add Team" form submission
+app.post('/add-team', async (req, res) => {
+    try {
+        // Get data from the form
+        const { team1, team2, Date, g1, g2, venue } = req.body;
+
+        // Create a new Clashess document
+        const newClash = new Clash({
+            team1,
+            team2,
+            Date,
+            g1,
+            g2,
+            venue
+        });
+
+        // Save the new team to the database
+        await newClash.save();
+
+        res.redirect('/clashes'); // Redirect back to the clashes page or wherever you want
+    } catch (error) {
+        console.error('Error adding new team:', error);
+        res.status(500).send('Error adding new team');
+    }
+});
+
+// Handle the POST request for ticket booking
+app.post('/tickets', async (req, res) => {
+    try {
+        // Get data from the form
+        const { fullname, email, phone, match, ticketType, seatRegion, quantity } = req.body;
+
+        // Create a new Booking object
+        const newBooking = new Booking({
+            fullname,
+            email,
+            phone,
+            match,
+            ticketType,
+            seatRegion,
+            quantity
+        });
+
+        // Save the booking to the database
+        await newBooking.save();
+
+        // Redirect or render a success page
+        res.status(200).json({ message: 'Booking successful' });
+
+    } catch (error) {
+        console.error('Error submitting booking:', error);
+        res.status(500).send('Error submitting booking');
+    }
+});
+
+
 app.get('/teams', (req, res) => {
     // Check if the user is authenticated (admin)
     if (req.cookies.jwt) {
@@ -307,9 +370,20 @@ app.post('/update/:id', async (req, res) => {
 app.get('/index', (req, res) => {
     return res.render("index");
 });
-app.get('/tickets', (req, res) => {
-    return res.render("tickets");
+app.get('/tickets', async (req, res) => {
+    try {
+        // Fetch the distinct team combinations from your Clash model
+        const clashes = await Clash.find({}, 'team1 team2');
+
+        // Render the ticket booking form and pass the list of clashes as a variable
+        res.render('tickets', { clashes });
+    } catch (error) {
+        console.error('Error fetching clashes:', error);
+        res.status(500).send('Internal server error');
+    }
 });
+
+
 app.get('/login', (req, res) => {
     return res.render("login");
 });

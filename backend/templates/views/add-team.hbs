@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ... Head section ... -->
+</head>
+
+<body>
+    <h2>Add New Team</h2>
+    <form action="/add-team" method="POST">
+        <label for="team1">Team 1:</label>
+        <select name="team1" required>
+            {{#each teams}}
+            <option value="{{this.firstname}}">{{this.firstname}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="team2">Team 2:</label>
+        <select name="team2" required>
+            {{#each teams}}
+            <option value="{{this.firstname}}">{{this.firstname}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="Date">Date:</label>
+        <input type="date" name="Date" required>
+        <br>
+        <label for="g1">Team 1 Goals:</label>
+        <input type="number" name="g1" required>
+        <br>
+        <label for="g2">Team 2 Goals:</label>
+        <input type="number" name="g2" required>
+        <br>
+        <label for="venue">Venue:</label>
+        <input type="text" name="venue" required>
+        <br>
+        <button type="submit">Add Team</button>
+    </form>
+</body>
+
+</html>
